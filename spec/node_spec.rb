@@ -1,8 +1,9 @@
+require "RSpec"
 require "./lib/node"
 
-Rspec.describe Node do
+RSpec.describe Node do
   describe 'initialize' do
-    it 'is an instance of node' do
+    it 'it has node data' do
       node = Node.new("plop")
 
       expect(node.data).to eq("plop")
@@ -11,7 +12,7 @@ Rspec.describe Node do
     it 'has next node' do
       node = Node.new("plop")
     
-    expect(next_node).to eq (nil)
+      expect(node.next_node).to eq (nil)
     end
   end
 end
