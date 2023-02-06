@@ -104,4 +104,11 @@ class LinkedList
         end
       sounds.include? "#{sound}"
     end
+
+    def pop
+      second_to_last_node = self.head
+      (count - 2).times {second_to_last_node = second_to_last_node.next_node}
+      return second_to_last_node.next_node.sound
+      second_to_last_node.next_node = nil
+    end
   end
