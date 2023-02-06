@@ -94,4 +94,14 @@ class LinkedList
       }
       return sounds.join(" ")
     end
+
+    def includes?(sound)
+      current_node = self.head
+      sounds = [current_node.sound]
+        while !current_node.next_node.nil?
+          current_node = current_node.next_node
+          sounds << current_node.sound 
+        end
+      sounds.include? "#{sound}"
+    end
   end
