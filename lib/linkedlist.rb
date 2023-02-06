@@ -83,4 +83,15 @@ class LinkedList
         #sets the original node to follow the inserted node
       end
     end
+
+    def find(position, nodes)
+      desired_node = self.head
+      sounds = []
+      position.times {desired_node = desired_node.next_node}
+      nodes.times {
+        sounds << desired_node.sound
+        desired_node = desired_node.next_node
+      }
+      return sounds.join(" ")
+    end
   end
