@@ -46,4 +46,36 @@ class LinkedList
       end
       node_count
     end
+
+    def prepend(sound)
+      previous_head = head
+      self.head = Node.new(sound, previous_head)
+      #needs to be self.head on line 33 or else the new head variable will stay in this method
+    end
+
+    def insert(position, sound)
+      if self.head.nil?           
+        this_node = Node.new(sound, nil)
+        @head=this_nod
+      end
+      if position == 0 
+        this_node = Node.new(sound, self.head)
+        self.head = this_node
+      end
+      if position > 0
+        pos = position - 1
+        current = self.head
+        before_current = self.head
+        pos.times do
+          before_current = current.next_node
+        end 
+        position.times do
+          current=current.next_node
+        end 
+        this_node = Node.new(sound, nil) 
+        after_current = before_current.next_node
+        before_current.next_node = this_node 
+        this_node.next_node = after_current
+      end
+    end
   end
