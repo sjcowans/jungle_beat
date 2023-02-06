@@ -78,5 +78,25 @@ RSpec.describe LinkedList do
       expect(list.to_string).to eq("doop deep")
       expect(list.head.next_node.sound).to eq("deep")
     end
+
+    it 'has working prepend' do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+
+      expect(list.to_string).to eq("dop plop suu")
+      expect(list.count).to eq(3)
+    end
+  end
+
+  it 'has working insert' do
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    list.insert(1, "woo")
+
+    expect(list.to_string).to eq("dop woo plop suu")
   end
 end
