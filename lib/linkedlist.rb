@@ -1,11 +1,9 @@
 class LinkedList
-  attr_reader :to_string, :last_node
-  attr_accessor :head, :next_node, :count
+  attr_reader :last_node
+  attr_accessor :head, :next_node, :count, :to_string, :sound
 
   def initialize
     self.head = nil
-    @count = 0
-    @to_string = ""
   end
 
   def append(sound)
@@ -18,11 +16,32 @@ class LinkedList
       end
       last_node.next_node = Node.new(sound, nil)
     end
-    @count += 1
-      if @count == 1
-        @to_string << "#{sound}"
-      else 
-        @to_string << " #{sound}"
+
+    def to_string
+      if self.head == nil
+        return "" 
+      else
+        current_node = self.head
+        sounds = [current_node.sound]
+          while !current_node.next_node.nil?
+            current_node = current_node.next_node
+            sounds << current_node.sound 
+          end
       end
+      sounds.join(" ")
+    end
+
+    def count
+      if(self.head == nil)
+        return 0
+      else
+        node_count = 1
+        current_node = self.head
+          while !current_node.next_node.nil?
+          current_node = current_node.next_node
+          node_count += 1 
+          end
+      end
+      node_count
+    end
   end
-end
