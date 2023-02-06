@@ -56,7 +56,7 @@ class LinkedList
     def insert(position, sound)
       if self.head.nil?           
         this_node = Node.new(sound, nil)
-        @head=this_nod
+        self.head = this_node
       end
       if position == 0 
         this_node = Node.new(sound, self.head)
@@ -64,18 +64,23 @@ class LinkedList
       end
       if position > 0
         pos = position - 1
-        current = self.head
-        before_current = self.head
+        original = self.head
+        before_original_node = self.head
         pos.times do
-          before_current = current.next_node
+          before_original_node = original.next_node
+          #grabs the node before the original node
         end 
         position.times do
-          current=current.next_node
+          original_node = original.next_node
+          #grabs the original node
         end 
-        this_node = Node.new(sound, nil) 
-        after_current = before_current.next_node
-        before_current.next_node = this_node 
-        this_node.next_node = after_current
+        inserted_node = Node.new(sound, nil) 
+        original_node_new_spot = before_original_node.next_node
+        #sets after_current to the original node
+        before_original_node.next_node = inserted_node
+        #reassigs the original node to the inserted node
+        inserted_node.next_node = original_node_new_spot
+        #sets the original node to follow the inserted node
       end
     end
   end
