@@ -48,8 +48,8 @@ RSpec.describe LinkedList do
 
     it 'can append new node' do
       list = LinkedList.new
-  
-      expect(list.append("deep")).to eq ("deep")
+
+      expect(list.append("deep")).to eq("deep")
     end
 
     it 'can go to next node' do

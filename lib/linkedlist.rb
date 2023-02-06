@@ -16,6 +16,8 @@ class LinkedList
       end
       last_node.next_node = Node.new(sound, nil)
     end
+    sound
+  end
 
     def to_string
       if self.head == nil
