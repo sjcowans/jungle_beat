@@ -23,19 +23,13 @@ RSpec.describe JungleBeat do
       expect(jb.list.head).to eq(nil)
     end
 
-    it 'can append' do
+    it 'has correct append' do
       jb = JungleBeat.new
       jb.append("deep doo dill")
 
-      expect(jb.list.head).to eq("deep doo dill")
-    end
-
-    it 'has correct linked list' do
-      jb = JungleBeat.new
-      jb.append("deep doo dill")
-      
-      expect(jb.list.head.data).to eq("deep")
-      expect(jb.list.head.next_node.data).to eq("doo")
+      expect(jb.append("deep doo dill")).to eq("deep doo dill")
+      expect(jb.list.head.sound).to eq("deep")
+      expect(jb.list.head.next_node.sound).to eq("doo")
     end
 
     it 'has proper count' do
