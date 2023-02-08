@@ -43,8 +43,20 @@ RSpec.describe JungleBeat do
    it 'can play sounds' do
       jb = JungleBeat.new
       jb.append("deep doo ditt woo hoo shu")
-
-      expect(jb.list.count).to eq(6)
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("turn up the bass")
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("turn up the bass")
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("deep doo ditt woo hoo shu")
+      jb.append("jungle beat")
+      jb.append("party time")
+      expect(jb.list.count).to eq(66)
+      expect(jb.play)
     end
   end
 end
