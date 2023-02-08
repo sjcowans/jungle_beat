@@ -78,7 +78,7 @@ class LinkedList
         original_node_new_spot = before_original_node.next_node
         #sets after_current to the original node
         before_original_node.next_node = inserted_node
-        #reassigs the original node to the inserted node
+        #reassigns the original node to the inserted node
         inserted_node.next_node = original_node_new_spot
         #sets the original node to follow the inserted node
       end
